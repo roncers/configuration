@@ -1,0 +1,15 @@
+{
+	"Create new snippet": {
+		"prefix": "newsnpt",
+		"body": [
+			"\"${1:Snippet Name}\": {",
+			"\t\"prefix\": \"${2:trigger}\",",
+			"\t\"body\": [",
+			"\t\t\"$3\"",
+			"\t],",
+			"\t\"description\": \"${4:description}\"",
+			"},"
+		],
+		"description": "Insert the snippet structure into a snippet file"
+	}
+}

@@ -1,0 +1,62 @@
+{
+    "let statement declaration": {
+        "prefix": "l",
+        "body": [
+            "let ${1:name}"
+        ],
+        "description": "instanciate/declare a variable which can be multiassigned"
+    },
+    "let await declaration": {
+        "prefix": "la",
+        "body": [
+            "let ${1:name} = await ${2:value}"
+        ],
+        "description": "instanciate/declare an awaited variable await"
+    },
+    "const statement declaration": {
+        "prefix": "c",
+        "body": [
+            "const ${1:name}"
+        ],
+        "description": "instanciate/declare a constant variable"
+    },
+    "const from destructuring declaration": {
+        "prefix": "cd",
+        "body": [
+            "const { ${1:name} } = ${2:value}"
+        ],
+        "description": "instanciate/declare a constant variable which comes from destucturing"
+    },
+    "const arrow function": {
+        "prefix": "ca",
+        "body": [
+            "const ${1:name} = (${2:arguments}) => {\n\treturn ${0}\n}"
+        ],
+        "description": "instanciate/declare a constant arrow function"
+    },
+    "if statement": {
+        "prefix": "i",
+        "body": [
+            "if (${1:condition}) {",
+            "\t${0}",
+            "}"
+        ],
+        "description": "declare an if statement"
+    },
+    "else statement": {
+        "prefix": "el",
+        "body": [
+            "else {",
+            "${0}",
+            "}"
+        ],
+        "description": "declare an else statement"
+    },
+    "ternary assignment": {
+        "prefix": "ta",
+        "body": [
+            "const ${0} = ${1:cond} ? ${2:true} : ${3: false}"
+        ],
+        "description": "declaration of a ternary operator"
+    }
+}
