@@ -1,0 +1,64 @@
+[alias]
+	# ------git add------
+	a = add
+	aa = add --all
+	ap = add --patch
+	au = add --update
+	# ------git log------
+	l = log
+	ll = log --graph --topo-order --decorate --all --boundary --date=short --abbrev-commit --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%aN]%Creset %Cblue%G?%Creset'
+	lll = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat
+	lg = log --graph
+	lo = log --oneline
+	lor = log --oneline --reverse
+	lp = log --patch
+	lfp = log --first-parent
+	ltp = log --topo-order
+	# ------git diff------
+	d = diff
+	dc = diff --cached
+	# ------git restore------
+	re = restore
+	res = restore --staged
+	# ------git grep------
+	g = grep
+	gg = grep -i
+	gn = grep -n
+	# ------git commit------
+	c = commit --verbose
+	ca = commit -a --verbose
+	cm = commit -m
+	cam = commit -a -m
+	cane = commit --amend --no-edit
+	caane = commit --amend --all --no-edit
+	ci = commit --interactive
+	# ------git switch------
+	sw = switch
+	swc = switch --create
+	swm = switch --merge
+	swd = switch --detach
+	# ------git branch------
+	b = branch
+	sort-branches-by-date = "!git for-each-ref --sort='-authordate' --format='%(authordate)\t%(objectname:short)\t%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+	bs = sort-branches-by-date
+	delete-merged-branches = !sh -c \"git checkout main && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\"
+	brd = delete-merged-branches
+	bm = branch --merged
+	bnm = branch --no-merged
+	bed = branch --edit-description
+	bsd = branch --show-description
+	# ------git checkout------
+	co = checkout
+	# ------git stash------
+	stashes = stash list
+	# ------misc------
+	cloner = clone --recurse-submodules
+	fap = fetch --all --prune
+	s = status
+	acp = "!f() { git add . && git commit -m "$*" && git push; }; f"
+	# meta git
+	list-aliases = "!git config -l | grep alias | cut -c 7-"
+	la = list-aliases
+	aliases = list-aliases
+	list-and-filter-aliases = "!f() { git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /' | grep -i \"$1\"; }; f"
+	laf = list-and-filter-aliases
