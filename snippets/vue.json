@@ -1,0 +1,16 @@
+{
+    "Init .vue file": {
+        "prefix": [
+            "vueinit",
+            "blankvue"
+        ],
+        "body": [
+            "<template>",
+            "  <div></div>",
+            "</template>",
+            "<script setup></script>",
+            "<style scoped lang=\"scss\"></style>"
+        ],
+        "description": "Initialize a .vue file with template, script, and style sections"
+    }
+}
