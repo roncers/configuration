@@ -26,9 +26,9 @@
 	gn = grep -n
 	# ------git commit------
 	c = commit --verbose
-	ca = commit -a --verbose
+	ca = commit -all --verbose
 	cm = commit -m
-	cam = commit -a -m
+	cam = commit -all -m
 	cane = commit --amend --no-edit
 	caane = commit --amend --all --no-edit
 	ci = commit --interactive
@@ -47,10 +47,21 @@
 	bnm = branch --no-merged
 	bed = branch --edit-description
 	bsd = branch --show-description
+	init-branch = "!f() { git switch main && git pull && git switch --create \"$1\"; }; f"
 	# ------git checkout------
 	co = checkout
 	# ------git stash------
-	stashes = stash list
+	st = stash
+	stp = stash pop
+	stki = stash --keep-index
+	stiu = stash --include-untracked
+	sta = stash --all
+	stl = stash list
+	sts  = stash show -p
+	std  = stash drop
+	# ------git push------
+	p = push
+	pushfwl = push --force-with-lease
 	# ------misc------
 	cloner = clone --recurse-submodules
 	fap = fetch --all --prune
