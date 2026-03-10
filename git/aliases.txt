@@ -26,9 +26,9 @@
 	gn = grep -n
 	# ------git commit------
 	c = commit --verbose
-	ca = commit -all --verbose
+	ca = commit -a --verbose
 	cm = commit -m
-	cam = commit -all -m
+	cam = commit -a -m
 	cane = commit --amend --no-edit
 	caane = commit --amend --all --no-edit
 	ci = commit --interactive
@@ -51,14 +51,14 @@
 	# ------git checkout------
 	co = checkout
 	# ------git stash------
-	st = stash
-	stp = stash pop
-	stki = stash --keep-index
-	stiu = stash --include-untracked
-	sta = stash --all
-	stl = stash list
-	sts  = stash show -p
-	std  = stash drop
+	sts = stash
+	stspp = stash pop
+	stski = stash --keep-index
+	stsiu = stash --include-untracked
+	stsa = stash --all
+	stsl = stash list
+	stss  = stash show -p
+	stsd  = stash drop
 	# ------git push------
 	p = push
 	pushfwl = push --force-with-lease

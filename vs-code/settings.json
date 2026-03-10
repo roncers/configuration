@@ -1,0 +1,29 @@
+{
+  // Terminal
+  "terminal.integrated.defaultProfile.windows": "Nushell",
+  "terminal.integrated.profiles.windows": {
+    "Nushell": {
+      "path": ["C:\\Users\\mroncero\\AppData\\Local\\Programs\\nu\\bin\\nu.exe"]
+    }
+  },
+  // -------------
+
+  // Formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  // -------------
+
+  // Appearance
+  "editor.cursorBlinking": "smooth",
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#ff00c8",
+    "editor.selectionBackground": "#d645aa3a",
+    "editor.lineHighlightBackground": "#fcf8051f"
+  },
+  // -------------
+
+  // Misc
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.mode": "manual"
+  // -------------
+}
