@@ -1,5 +1,5 @@
 {
-  // Terminal
+  // # Terminal
   "terminal.integrated.defaultProfile.windows": "Nushell",
   "terminal.integrated.profiles.windows": {
     "Nushell": {
@@ -8,22 +8,54 @@
   },
   // -------------
 
-  // Formatting
+  // # Formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.semi": false,
   // -------------
 
-  // Appearance
+  // # Appearance
   "editor.cursorBlinking": "smooth",
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#ff00c8",
-    "editor.selectionBackground": "#d645aa3a",
-    "editor.lineHighlightBackground": "#fcf8051f"
+    "editorCursor.foreground": "#fc1fcd",
+    "editor.selectionBackground": "#fc1fcc5d",
+    "editor.lineHighlightBackground": "#e476ff1e"
   },
   // -------------
 
-  // Misc
+  // ## TodoTree
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "text",
+    "foreground": "#f33",
+    "background": "#ffff",
+    "opacity": 50,
+    "iconColour": "#23a"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check",
+      "type": "line"
+    },
+    "FIXME": {
+      "foreground": "#000",
+      "iconColour": "#c9d338",
+      "gutterIcon": true
+    }
+  },
+  // -------------
+  // # Vue
+  "vue.hover.rich": true,
+  // -------------
+  // # Git
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  // -------------
+  // # Misc
   "security.workspace.trust.untrustedFiles": "open",
-  "update.mode": "manual"
+  "update.mode": "manual",
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always"
   // -------------
 }

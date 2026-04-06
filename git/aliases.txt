@@ -1,3 +1,8 @@
+[core]
+	editor = windsurf --wait
+[user]
+	name = Martin Roncero
+	email = mroncero@indra.es
 [alias]
 	# ------git add------
 	a = add
@@ -42,6 +47,7 @@
 	sort-branches-by-date = "!git for-each-ref --sort='-authordate' --format='%(authordate)\t%(objectname:short)\t%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 	bs = sort-branches-by-date
 	delete-merged-branches = !sh -c \"git checkout main && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\"
+	clean-all-branches = "!f() { current=$(git branch --show-current); for branch in $(git branch --format=\"%(refname:short)\"); do if [ \"$branch\" != \"$current\" ] && [ \"$branch\" != \"main\" ]; then git branch -D \"$branch\"; fi; done; }; f"
 	brd = delete-merged-branches
 	bm = branch --merged
 	bnm = branch --no-merged
@@ -54,7 +60,7 @@
 	sts = stash
 	stspp = stash pop
 	stski = stash --keep-index
-	stsiu = stash --include-untracked
+	stsiu = stash push --include-untracked
 	stsa = stash --all
 	stsl = stash list
 	stss  = stash show -p
@@ -63,6 +69,7 @@
 	p = push
 	pushfwl = push --force-with-lease
 	# ------misc------
+	sync-main = !git checkout main && git fetch origin && git reset --hard origin/main
 	cloner = clone --recurse-submodules
 	fap = fetch --all --prune
 	s = status
@@ -73,3 +80,7 @@
 	aliases = list-aliases
 	list-and-filter-aliases = "!f() { git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /' | grep -i \"$1\"; }; f"
 	laf = list-and-filter-aliases
+	# TODO: test
+	grab = "!f() { git checkout origin/main -- \"$@\"; git reset HEAD \"$@\"; }; f"
+[push]
+	default = current
