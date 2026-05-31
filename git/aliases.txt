@@ -80,6 +80,8 @@
 	aliases = list-aliases
 	list-and-filter-aliases = "!f() { git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /' | grep -i \"$1\"; }; f"
 	laf = list-and-filter-aliases
+	update-review = !git add . && git commit -m \"update review\" && git pull && git push
+
 	# TODO: test
 	grab = "!f() { git checkout origin/main -- \"$@\"; git reset HEAD \"$@\"; }; f"
 [push]
