@@ -1,8 +1,3 @@
-[core]
-	editor = windsurf --wait
-[user]
-	name = Martin Roncero
-	email = mroncero@indra.es
 [alias]
 	# ------git add------
 	a = add
@@ -22,6 +17,7 @@
 	# ------git diff------
 	d = diff
 	dc = diff --cached
+	savediff = "!f() { git diff --no-color main \"${1:-HEAD}\" -- . \":!package-lock.json\" > diff.txt; echo \"Diff saved to diff.txt (package-lock.json ignored)\"; }; f"
 	# ------git restore------
 	re = restore
 	res = restore --staged
@@ -66,8 +62,11 @@
 	stss  = stash show -p
 	stsd  = stash drop
 	# ------git push------
-	p = push
-	pushfwl = push --force-with-lease
+	pu = push
+	puf = push --force-with-lease
+	# ------git pull------
+	pl = pull
+	pr = pull --rebase
 	# ------misc------
 	sync-main = !git checkout main && git fetch origin && git reset --hard origin/main
 	cloner = clone --recurse-submodules
@@ -80,7 +79,13 @@
 	aliases = list-aliases
 	list-and-filter-aliases = "!f() { git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /' | grep -i \"$1\"; }; f"
 	laf = list-and-filter-aliases
+	# Custom
+	update-review = !git add . && git commit -m \"update review\" && git pull && git push
+    delete-database = "!bash -c 'echo \"Initializing database deletion\" && sleep 1 && echo \"Searching all local branches...\" && sleep 0.5 && echo \"...\" && sleep 0.5 && echo \"...\" && sleep 0.5 && echo \"...\" && sleep 0.5 && git branch && sleep 1 && echo \"Successfully deleted all branches from the remote and local database!\"'"
+
 	# TODO: test
 	grab = "!f() { git checkout origin/main -- \"$@\"; git reset HEAD \"$@\"; }; f"
 [push]
+	default = current
+[pull]
 	default = current
