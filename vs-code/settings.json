@@ -58,4 +58,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always"
   // -------------
+  // extensions
+  // Vue (Official), EsLint, Prettier, TODO Tree
 }
+
